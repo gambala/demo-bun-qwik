@@ -1,0 +1,17 @@
+service: demo-bun-qwik
+image: gambala/demo-bun-qwik
+servers:
+  - <%= ENV["MAIN_SERVER_IP"] %>
+labels:
+  traefik.http.routers.demo-bun-qwik-web.rule: Host(`qwik.gambala.pro`)
+registry:
+  server: ghcr.io
+  username: gambala
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+healthcheck:
+  interval: 10s
+  path: /
+  cmd: ls -l > /dev/null
+builder:
+  multiarch: false

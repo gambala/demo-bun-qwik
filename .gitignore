@@ -39,3 +39,10 @@ lerna-debug.log*
 # Yarn
 .yarn/*
 !.yarn/releases
+
+# Kamal envs
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
